@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fbf9f1;
+  --color-gold-100: #f6f1de;
+  --color-gold-200: #ece0bd;
+  --color-gold-300: #dec993;
+  --color-gold-400: #ceac66;
+  --color-gold-500: #b89244;
+  --color-gold-600: #9e7536;
+  --color-gold-700: #7f592d;
+  --color-gold-800: #67472a;
+  --color-gold-900: #553c26;
+
+  --color-rosewine-50: #fcf4f5;
+  --color-rosewine-100: #fae9eb;
+  --color-rosewine-200: #f5d6da;
+  --color-rosewine-300: #ecb5bd;
+  --color-rosewine-400: #de8997;
+  --color-rosewine-500: #cb5f72;
+  --color-rosewine-600: #b44458;
+  --color-rosewine-700: #973547;
+  --color-rosewine-800: #7e2e3d;
+  --color-rosewine-900: #6a2b37;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f0e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4bc8b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b89244;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.dark-glass {
+  background: rgba(28, 25, 23, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Shimmer animation for badges */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2.5s infinite;
+}
